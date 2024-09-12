@@ -1,7 +1,15 @@
 package com.socgen.waleed.training;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+@Configuration
 public class App 
 {
     public static void main( String[] args )
@@ -26,12 +34,17 @@ public class App
     	AnnotationsEngineer engineer = context.getBean("anEngineer", AnnotationsEngineer.class);
     	
     	engineer.workForWages();
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+    	 	
     }
+    
+    
+    @Bean
+    List<String> getNames() {
+    	return new LinkedList<String>(Arrays.asList(
+    			"Anand", "Sneha", "Shreya", "Pranav"
+    			));
+    }
+    
+    
+    
 }

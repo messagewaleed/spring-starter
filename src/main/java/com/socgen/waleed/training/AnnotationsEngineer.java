@@ -1,14 +1,31 @@
 package com.socgen.waleed.training;
 
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+//@Service
+//@Controller
+//@Repository
 @Component("anEngineer") //No bean declarations now in the xml!!!
+@PropertySource("classpath:user.properties")
 public class AnnotationsEngineer {
 	
 	@Autowired // 3
 	private Laptop laptop;
+	
+	@Value("${userName}")
+	private String userName;
+	
+	@Value("${userId}")
+	private String userId;
+	
+	@Autowired
+	private List<String> names;
 	
 	public AnnotationsEngineer() {
 		// TODO Auto-generated constructor stub
@@ -36,6 +53,10 @@ public class AnnotationsEngineer {
 
 	void workForWages() {
 		System.out.println(this);
+		System.out.println("My details: ");
+		System.out.println(userName + " with id : " + userId);
+		System.out.println("Registered names : ");
+		names.forEach(System.out::println);
 	}
 	
 	
