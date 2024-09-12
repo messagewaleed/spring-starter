@@ -10,7 +10,7 @@ public class App
 //        engineer.workForWages();
     	
 //    	1. Load the context
-    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("annotationsConfig.xml");
     	
 //    	2. Get a reference to the bean
     	//Engineer engineer = context.getBean("engineer", Engineer.class);
@@ -19,9 +19,14 @@ public class App
     	//engineer.workForWages();
     	
     	
-    	ComputerEnginner computerEnginner = context.getBean("computerEngineer", ComputerEnginner.class);
+//    	ComputerEnginner computerEnginner = context.getBean("computerEngineer", ComputerEnginner.class);
+//    	
+//    	computerEnginner.work();
     	
-    	computerEnginner.work();
+    	AnnotationsEngineer engineer = context.getBean("anEngineer", AnnotationsEngineer.class);
+    	
+    	engineer.workForWages();
+    	
     	
     	
     	

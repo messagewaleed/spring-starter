@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- <bean class="com.socgen.waleed.training.AnnotationsEngineer" id="anEngineer">
+    	
+    </bean> -->
+    
+    <bean class="com.socgen.waleed.training.Laptop" id="laptop">
+    <property name="name" value="elite book"></property>
+    <property name="manufacturer" value="HP"></property>
+    </bean>
+    
+    <bean class="com.socgen.waleed.training.Laptop" id="otherLaptop">
+    <property name="name" value="thinkpad"></property>
+    <property name="manufacturer" value="IBM"></property>
+    </bean>
+    
+    
+    
+    <!-- For annotations to work -->
+    <context:annotation-config></context:annotation-config>
+   
+    
+    <!-- For Components to be scannable  -->
+    
+    <context:component-scan base-package="com.socgen.waleed.training"></context:component-scan>
+    
+    </beans>
