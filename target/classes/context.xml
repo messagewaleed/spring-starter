@@ -9,11 +9,57 @@
         <bean class="com.socgen.waleed.training.Engineer" id="engineer">
         
         <!-- Setter DI here -->
-        <property name="id" value="1278"></property>
+        <!--  <property name="id" value="1278"></property>
         <property name="name" value="Rakesh"></property>
         <property name="skills" value="Java, HTML, C++, REACT, AJAX"></property>
+        <property name="departments">
+        <list>
+        	<ref bean="department"></ref>
+        	<ref bean="thirdDepartment"></ref>
+        </list>
+        </property> -->
+        
+        <!-- <property name="department" ref="department"></property>  -->
+        
+        <!-- Constructor DI here: -->
+        <constructor-arg value="3417"></constructor-arg>
+        <constructor-arg value="Neha"></constructor-arg>
+        <constructor-arg value="C, C++, Devops, Java, Spring"></constructor-arg>
+        <constructor-arg ref="department"></constructor-arg>
+        
+        
         
         </bean>
+        
+        <bean autowire="byName" class="com.socgen.waleed.training.ComputerEnginner" id="computerEngineer">
+        
+        </bean>
+        
+        <bean class="com.socgen.waleed.training.Laptop" id="laptop">
+        <property name="name" value="waio"></property>
+        <property name="manufacturer" value="sony"></property>
+        </bean>
+        
+        <bean class="com.socgen.waleed.training.Laptop" id="otherLaptop">
+        <property name="name" value="macbook air"></property>
+        <property name="manufacturer" value="apple"></property>
+        </bean>
+        
+        
+        <bean class="com.socgen.waleed.training.Department" id="department">
+        	<property name="name" value="cpt"></property>
+        	<property name="domain" value="computer science"></property>
+        </bean>
+        
+        <!-- <bean class="com.socgen.waleed.training.Department" id="secondDepartment">
+        	<property name="name" value="ece"></property>
+        	<property name="domain" value="electronics and communications"></property>
+        </bean>
+        
+        <bean class="com.socgen.waleed.training.Department" id="thirdDepartment">
+        	<property name="name" value="cv"></property>
+        	<property name="domain" value="civil"></property>
+        </bean> -->
         
         
         

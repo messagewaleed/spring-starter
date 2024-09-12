@@ -1,5 +1,7 @@
 package com.socgen.waleed.training;
 
+import java.util.List;
+
 public class Engineer {
 
 	private Integer id;
@@ -7,16 +9,37 @@ public class Engineer {
 	private String name;
 	
 	private String skills;
+	
+	private Department department;
+	
+//	private List<Department> departments;
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+//	public List<Department> getDepartments() {
+//		return departments;
+//	}
+//
+//	public void setDepartments(List<Department> departments) {
+//		this.departments = departments;
+//	}
 
 	public Engineer() {
 
 	}
 
-	public Engineer(Integer id, String name, String skills) {
+	public Engineer(Integer id, String name, String skills, Department department) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.skills = skills;
+		this.department = department;
 	}
 
 	public Integer getId() {
@@ -28,9 +51,11 @@ public class Engineer {
 		this.id = id;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Engineer [id=" + id + ", name=" + name + ", skills=" + skills + "]";
+		return "Engineer [id=" + id + ", name=" + name + ", skills=" + skills + ", department=" + department + "]";
 	}
 
 	public String getName() {
@@ -55,6 +80,7 @@ public class Engineer {
 	public void workForWages() {
 		System.out.println("Hello I am an engineer and my details are : ");
 		System.out.println(this);
+		System.out.println("And I work for the department : " + getDepartment());
 	}
 
 }
