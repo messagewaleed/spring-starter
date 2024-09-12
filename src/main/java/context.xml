@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+        <beans>
+        <!-- Define your beans here -->
+        <!-- <bean class="FullyQualifiedName" id=uniqueIdentifier""></bean> -->
+        
+        <bean class="com.socgen.waleed.training.Engineer" id="engineer">
+        
+        <!-- Setter DI here -->
+        <property name="id" value="1278"></property>
+        <property name="name" value="Rakesh"></property>
+        <property name="skills" value="Java, HTML, C++, REACT, AJAX"></property>
+        
+        </bean>
+        
+        
+        
+        
+        </beans>
