@@ -26,6 +26,19 @@
 			<artifactId>spring-context</artifactId>
 			<version>6.1.6</version>
 		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
+<!-- For JdbcTemplate:   -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>6.1.12</version>
+		</dependency>
+
 
 	</dependencies>
 </project>

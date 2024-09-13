@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,12 +32,21 @@ public class App
 //    	
 //    	computerEnginner.work();
     	
-    	AnnotationsEngineer engineer = context.getBean("anEngineer", AnnotationsEngineer.class);
+//    	AnnotationsEngineer engineer = context.getBean("anEngineer", AnnotationsEngineer.class);
+//    	
+//    	engineer.workForWages();
     	
-    	engineer.workForWages();
+    	DbOperate dbOperate = context.getBean("dbOperate", DbOperate.class);
+    	
+    	System.out.println("Number of registers users : " + dbOperate.getCountOfLearners());
+    	
+    	System.out.println("Enter id to search:");
+    	
+    	System.out.println("User name: " + dbOperate.getUserNameById(new Scanner(System.in).nextInt()));
+    	
+//    	dbOperate.connectToDb();
     	 	
     }
-    
     
     @Bean
     List<String> getNames() {
