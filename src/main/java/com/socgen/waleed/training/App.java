@@ -40,9 +40,24 @@ public class App
     	
     	System.out.println("Number of registers users : " + dbOperate.getCountOfLearners());
     	
-    	System.out.println("Enter id to search:");
+//    	System.out.println("Enter id to search:");
     	
-    	System.out.println("User name: " + dbOperate.getUserNameById(new Scanner(System.in).nextInt()));
+    	System.out.println("Enter name, address of new user:");
+    	
+    	Scanner scan = new Scanner(System.in);
+    	
+    	dbOperate.registerNewUser(new User(scan.nextLine(), scan.nextLine()));
+    	System.out.println("User registered!");
+    	
+    	System.out.println("Registered users: ");
+    	
+//    	System.out.println("User details : " +  dbOperate.getAllUserDetailsById(scan.nextInt()));
+    	
+//    	System.out.println("User name: " + dbOperate.getUserNameById(new Scanner(System.in).nextInt()));
+    	
+    	List<User> listOfUsers = dbOperate.getAllUsersWithAllTheirDetails();
+    	
+    	listOfUsers.forEach(System.out::println);
     	
 //    	dbOperate.connectToDb();
     	 	
